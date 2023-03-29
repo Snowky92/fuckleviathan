@@ -8,6 +8,7 @@ public class PlayerControllerX : MonoBehaviour
     private float rotationSpeed = 50;
     private float verticalInput;
 
+    public float horizontalInput;
     public GameObject propeller;
     private float propSpeed = 2000;
 
@@ -31,5 +32,14 @@ public class PlayerControllerX : MonoBehaviour
 
         // Rotates the propeller
         propeller.transform.Rotate(Vector3.forward, propSpeed * Time.deltaTime);
+        
+
+        //get user horizontal input
+        horizontalInput = Input.GetAxis("Horizontal");
+
+        //bouge l'avion sur le coté
+        transform.Rotate(Vector3.forward, horizontalInput * rotationSpeed * Time.deltaTime * -1);
+
+        
     }
 }
