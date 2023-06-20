@@ -12,12 +12,6 @@ public class PlayerControllerX : MonoBehaviour
     public GameObject propeller;
     private float propSpeed = 2000;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -39,7 +33,7 @@ public class PlayerControllerX : MonoBehaviour
 
         //bouge l'avion sur le coté
         transform.Rotate(Vector3.forward, horizontalInput * rotationSpeed * Time.deltaTime * -1);
+        transform.Rotate(Vector3.right, horizontalInput * rotationSpeed * Time.deltaTime * 1);
 
-        
     }
 }
